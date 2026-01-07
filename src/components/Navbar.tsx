@@ -120,10 +120,14 @@ export default function Navbar() {
                                 PM-KUSUM <ChevronDown className="w-3 h-3 opacity-50" />
                             </Link>
                             <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-primary overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                <DropdownLink href="#">SolarWiz</DropdownLink>
-                                <DropdownLink href="#">WaterWiz</DropdownLink>
-                                <DropdownLink href="#">MachineWiz</DropdownLink>
-                                <DropdownLink href="#">Asset Management</DropdownLink>
+                                <DropdownLink href="/pm-kusum">IoT SCADA</DropdownLink>
+                                <DropdownLink href="/pm-kusum">ReportWiz</DropdownLink>
+                                <DropdownLink href="/pm-kusum">Central Monitoring System (CMS)</DropdownLink>
+                                <DropdownLink href="/pm-kusum">Asset Management System (AMS)</DropdownLink>
+                                <DropdownLink href="/pm-kusum">HT Panel</DropdownLink>
+                                <DropdownLink href="/pm-kusum">ACDB Panels</DropdownLink>
+                                <DropdownLink href="/pm-kusum">Weather Monitoring System (WMS)</DropdownLink>
+                                <DropdownLink href="/pm-kusum">Telemetry System</DropdownLink>
                             </div>
                         </div>
 
@@ -154,7 +158,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-6 z-20">
                         <Link
                             href="/contact"
-                            className="hidden md:inline-flex items-center px-8 py-3 bg-primary text-slate-900 font-bold rounded-full hover:bg-white hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl text-sm uppercase tracking-wider"
+                            className="hidden md:inline-flex items-center px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-white hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl text-sm uppercase tracking-wider"
                         >
                             Let&apos;s Connect
                         </Link>
