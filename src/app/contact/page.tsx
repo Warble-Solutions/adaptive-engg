@@ -188,25 +188,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* 4. NETWORK PRESENCE (Light) */}
-            <section className="section-light py-24 bg-white rounded-t-[40px] relative z-20">
-                <div className="max-w-7xl mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-slate-900 text-center mb-16 font-heading reveal">Regional Offices</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 reveal">
-                        {[
-                            { city: "Delhi", role: "Liasioning Office" },
-                            { city: "Mumbai", role: "Corporate Sales" },
-                            { city: "Kolkata", role: "East Zone Support" },
-                            { city: "Chennai", role: "South Zone Operations" }
-                        ].map((office, i) => (
-                            <div key={i} className="text-center p-6 border border-gray-100 rounded-2xl hover:border-primary/30 hover:bg-gray-50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                                <div className="text-2xl font-bold text-slate-900 mb-1">{office.city}</div>
-                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">{office.role}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* 5. TRANSMISSION PROTOCOLS (FAQ - Dark) */}
             <section className="section-dark py-24 bg-slate-900 text-white relative z-10 -mt-10 pt-32">

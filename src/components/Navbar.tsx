@@ -154,7 +154,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-6 z-20">
                         <Link
                             href="/contact"
-                            className="hidden md:inline-flex items-center px-6 py-2 bg-primary text-white font-bold rounded-full hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-primary/30 text-sm uppercase tracking-wider"
+                            className="hidden md:inline-flex items-center px-8 py-3 bg-primary text-slate-900 font-bold rounded-full hover:bg-white hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl text-sm uppercase tracking-wider"
                         >
                             Let&apos;s Connect
                         </Link>
