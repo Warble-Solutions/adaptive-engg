@@ -27,7 +27,7 @@ export default function MicroCTA({ text, href = "/contact", variant, className =
         return (
             <Link
                 href={href}
-                className={`inline-flex items-center gap-2 px-10 py-4 bg-green-600 rounded-full font-bold text-white hover:bg-white hover:text-green-600 hover:-translate-y-1 transition-all duration-300 w-fit cursor-pointer shadow-lg hover:shadow-green-500/50 ${className}`}
+                className={`inline-flex items-center gap-2 px-10 py-4 bg-primary rounded-full font-bold text-white hover:bg-white hover:text-primary hover:-translate-y-1 transition-all duration-300 w-fit cursor-pointer shadow-lg hover:shadow-primary/50 ${className}`}
             >
                 <span>{text}</span>
                 <ArrowRight className="w-4 h-4" />
