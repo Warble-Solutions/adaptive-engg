@@ -43,11 +43,11 @@ export default function Footer() {
                 <div>
                     <h5 className="text-white font-bold mb-6 text-lg tracking-wide">Solutions</h5>
                     <ul className="space-y-4 text-sm text-gray-400 font-medium">
-                        <li><Link href="/solutions/renewable" className="hover:text-primary transition-colors">Unified Renewable</Link></li>
-                        <li><Link href="/solutions/pm-kusum" className="hover:text-primary transition-colors">PM-KUSUM (SolarWiz)</Link></li>
-                        <li><Link href="#" className="hover:text-primary transition-colors">Water Treatment</Link></li>
-                        <li><Link href="#" className="hover:text-primary transition-colors">Tunnel Automation</Link></li>
-                        <li><Link href="#" className="hover:text-primary transition-colors">Electrical Panels</Link></li>
+                        <li><Link href="/solutions/renewable" className="hover:text-primary hover:pl-1 transition-all">Unified Renewable</Link></li>
+                        <li><Link href="/solutions/pm-kusum" className="hover:text-primary hover:pl-1 transition-all">PM-KUSUM (SolarWiz)</Link></li>
+                        <li><Link href="#" className="hover:text-primary hover:pl-1 transition-all">Water Treatment</Link></li>
+                        <li><Link href="#" className="hover:text-primary hover:pl-1 transition-all">Tunnel Automation</Link></li>
+                        <li><Link href="#" className="hover:text-primary hover:pl-1 transition-all">Electrical Panels</Link></li>
                     </ul>
                 </div>
 

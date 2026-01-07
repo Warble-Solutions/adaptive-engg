@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 import { SceneProvider } from "@/context/SceneContext";
+import SceneController from "@/components/3d/SceneController";
 
 export default function RootLayout({
   children,
@@ -33,9 +34,10 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} antialiased bg-transparent font-sans`}
       >
         <SceneProvider>
+          <SceneController />
           <ParticleStream />
           <Navbar />
-          <main className="relative z-10 min-h-screen">
+          <main className="relative z-10 min-h-screen overflow-x-hidden">
             {children}
           </main>
           <Footer />

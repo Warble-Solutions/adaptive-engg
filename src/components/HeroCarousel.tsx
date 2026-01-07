@@ -13,6 +13,8 @@ const slides = [
         subtext: "Integrating Manufacturing, Execution, and Digital Intelligence.",
         cta: "Our Solutions",
         link: "/renewable",
+        ctaSecondary: "Our Expertise",
+        linkSecondary: "/about",
         scene: {
             primaryColor: "#049A89", // Teal
             secondaryColor: "#0F172A",
@@ -26,11 +28,13 @@ const slides = [
         subtext: "Empowering farmers with Solar Pumps & IoT (SolarWiz).",
         cta: "View Scheme",
         link: "/pm-kusum",
+        ctaSecondary: "Contact Us",
+        linkSecondary: "/contact",
         scene: {
             primaryColor: "#3B82F6", // Blue
             secondaryColor: "#1E3A8A",
             speed: 2,
-            variant: 'waves' as SceneVariant
+            variant: 'solar' as SceneVariant
         }
     },
     {
@@ -39,11 +43,13 @@ const slides = [
         subtext: "Turnkey E&I for Tunnels, Data Centers & Heavy Industry.",
         cta: "View Projects",
         link: "/#projects",
+        ctaSecondary: "Get Quote",
+        linkSecondary: "/contact",
         scene: {
             primaryColor: "#F59E0B", // Amber
             secondaryColor: "#451A03",
             speed: 0.5,
-            variant: 'grid' as SceneVariant
+            variant: 'wind' as SceneVariant
         }
     },
 ];
@@ -57,11 +63,11 @@ export default function HeroCarousel() {
     }, [current, setScene]);
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const timer = setTimeout(() => {
             setCurrent((prev) => (prev + 1) % slides.length);
-        }, 6000);
-        return () => clearInterval(timer);
-    }, []);
+        }, 3000); // 3 seconds pause as requested
+        return () => clearTimeout(timer);
+    }, [current]);
 
     const slide = slides[current];
 
@@ -83,21 +89,31 @@ export default function HeroCarousel() {
                                 <span className="text-white/80 uppercase tracking-widest text-sm font-bold">Powering Tomorrow</span>
                             </div>
 
-                            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white leading-[1.1] mb-8 font-heading drop-shadow-2xl">
+                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-white leading-[1.1] mb-8 font-heading drop-shadow-2xl">
                                 {slide.title}
                             </h1>
 
-                            <p className="text-slate-200 text-xl md:text-3xl leading-relaxed mb-12 max-w-2xl font-light drop-shadow-lg">
+                            <p className="text-slate-200 text-lg sm:text-xl md:text-3xl leading-relaxed mb-12 max-w-2xl font-light drop-shadow-lg">
                                 {slide.subtext}
                             </p>
 
-                            <Link
-                                href={slide.link}
-                                className="inline-flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-dark transition-all duration-300 group"
-                            >
-                                {slide.cta}
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </Link>
+                            <div className="flex flex-wrap items-center gap-6">
+                                {/* Primary Button */}
+                                <Link
+                                    href={slide.link}
+                                    className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-primary transition-all duration-300 shadow-lg group"
+                                >
+                                    {slide.cta}
+                                </Link>
+
+                                {/* Secondary Button */}
+                                <Link
+                                    href={slide.linkSecondary}
+                                    className="inline-flex items-center gap-3 px-10 py-5 bg-white/5 border border-white/20 text-white rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-slate-900 transition-all duration-300 backdrop-blur-sm"
+                                >
+                                    {slide.ctaSecondary}
+                                </Link>
+                            </div>
                         </motion.div>
                     </AnimatePresence>
                 </div>
