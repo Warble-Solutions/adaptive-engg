@@ -371,7 +371,7 @@ export default function Home() {
             {/* Video 2: Renewable Monitoring */}
             <SectionWrapper className="group" delay={0.1}>
               <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
-                <iframe className="w-full h-full" src="https://www.youtube.com/embed/kY67Z31N4N0?loading=lazy" title="Monitoring Solutions" allowFullScreen></iframe>
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/9WUw0TAABCM?loading=lazy" title="Monitoring Solutions" allowFullScreen></iframe>
               </div>
               <div className="mt-4">
                 <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">Monitoring Solutions</h4>
@@ -428,7 +428,7 @@ export default function Home() {
           {/* View All Button */}
           <SectionWrapper className="mt-16 text-center">
             <a
-              href="https://www.youtube.com/@AdaptiveEngineeringPvt.Ltd"
+              href="https://youtube.com/@adaptiveengineeringpvt.ltd.?si=C_3FYNQtQxYz9B_D"
               target="_blank"
               className="inline-flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:bg-red-600 hover:border-red-600 text-white rounded-full font-bold transition-all group"
             >

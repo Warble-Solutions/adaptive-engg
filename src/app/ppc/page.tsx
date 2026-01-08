@@ -35,7 +35,7 @@ export default function PPCPage() {
                         </div>
 
                         <h1 className="text-5xl md:text-7xl font-black text-white mb-6 font-heading">
-                            AEPL Power <span className="text-primary">Plant Control</span>
+                            Power <span className="text-primary">Plant Control</span>
                         </h1>
 
                         <p className="text-gray-300 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
@@ -511,7 +511,7 @@ export default function PPCPage() {
 function FeatureRow({ title, desc, imageSrc, color }: { title: string; desc: string; imageSrc?: string; color: string }) {
     return (
         <div className="flex items-start gap-5 group p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 reveal">
-            <div className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 overflow-hidden ${color.replace('text-', 'bg-').replace('600', '100').replace('500', '100')}`}>
+            <div className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 overflow-hidden`}>
                 {imageSrc ? (
                     <Image src={imageSrc} alt={title} width={48} height={48} className="object-cover" />
                 ) : null}

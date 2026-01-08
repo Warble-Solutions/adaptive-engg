@@ -14,8 +14,20 @@ export default function RenewablePage() {
     return (
         <div className="flex flex-col w-full">
             {/* 1. HERO SECTION (Dark) */}
-            <section className="section-hero relative min-h-[50vh] flex flex-col items-center justify-center text-center px-6 pt-32 pb-12">
-                <div className="z-10 max-w-5xl">
+            <section className="section-hero relative min-h-[50vh] flex flex-col items-center justify-center text-center px-6 pt-32 pb-12 overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/imgs/renewable.jpg"
+                        alt="Renewable Energy"
+                        fill
+                        className="object-cover opacity-50"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/90 backdrop-blur-sm"></div>
+                </div>
+
+                <div className="z-10 max-w-5xl relative">
                     <SectionWrapper>
                         <div className="flex items-center justify-center gap-2 text-primary text-sm font-bold uppercase tracking-widest mb-6">
                             <Link href="/" className="hover:text-white transition-colors">Home</Link>

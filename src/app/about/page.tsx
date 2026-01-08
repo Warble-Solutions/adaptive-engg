@@ -304,18 +304,41 @@ export default function AboutPage() {
             </section>
 
             {/* 5. ACCREDITATIONS (Alt Light) */}
-            <section className="py-20 bg-gray-50 border-t border-gray-200 relative z-20">
+            <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative z-20">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <SectionWrapper>
-                        <h2 className="text-3xl font-bold text-slate-900 mb-12 font-heading">Certified Excellence</h2>
-                        <div className="flex flex-wrap justify-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                            <div className="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                                <CheckCircle2 className="w-8 h-8 text-primary" />
-                                ISO 9001:2015
+                        <h2 className="text-4xl font-bold text-slate-900 mb-6 font-heading">Certified Excellence</h2>
+                        <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-16">
+                            Adhering to the highest global standards for quality and safety.
+                        </p>
+
+                        <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12">
+                            {/* ISO Certification */}
+                            <div className="group relative p-8 bg-white rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex-1 max-w-sm mx-auto w-full">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-3xl"></div>
+                                <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                    <CheckCircle2 className="w-10 h-10" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-2">ISO 9001:2015</h3>
+                                <p className="text-slate-500 font-medium">Quality Management System</p>
+                                <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-center gap-2 text-sm text-slate-400 group-hover:text-primary transition-colors">
+                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    Verified & Active
+                                </div>
                             </div>
-                            <div className="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                                <CheckCircle2 className="w-8 h-8 text-blue-600" />
-                                TUV Nord Certified
+
+                            {/* TUV Nord Certification */}
+                            <div className="group relative p-8 bg-white rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex-1 max-w-sm mx-auto w-full">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-3xl"></div>
+                                <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                                    <Trophy className="w-10 h-10" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-2">TUV Nord Certified</h3>
+                                <p className="text-slate-500 font-medium">Internationally Recognized Safety</p>
+                                <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-center gap-2 text-sm text-slate-400 group-hover:text-blue-600 transition-colors">
+                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    Verified & Active
+                                </div>
                             </div>
                         </div>
                     </SectionWrapper>
