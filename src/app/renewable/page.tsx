@@ -14,7 +14,7 @@ export default function RenewablePage() {
     return (
         <div className="flex flex-col w-full">
             {/* 1. HERO SECTION (Dark) */}
-            <section className="section-hero relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-32">
+            <section className="section-hero relative min-h-[50vh] flex flex-col items-center justify-center text-center px-6 pt-32 pb-12">
                 <div className="z-10 max-w-5xl">
                     <SectionWrapper>
                         <div className="flex items-center justify-center gap-2 text-primary text-sm font-bold uppercase tracking-widest mb-6">
@@ -34,8 +34,54 @@ export default function RenewablePage() {
                 </div>
             </section>
 
+            {/* --- SOLUTION NAVIGATOR --- */}
+            <section className="relative z-20 py-24 bg-slate-50 shadow-2xl text-slate-900">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+                        {/* Card 1: Software */}
+                        <SectionWrapper delay={0.1}>
+                            <a href="#unified" className="block h-full group p-8 bg-white border border-slate-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+                                <div className="flex flex-col items-center text-center gap-6 mb-4">
+                                    <div className="p-5 bg-blue-50 rounded-2xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                                        <Monitor className="w-10 h-10" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-900 transition-colors">Unified Solutions</h3>
+                                </div>
+                                <p className="text-slate-500 text-base text-center leading-relaxed transition-colors">SCADA, PPC, and Telemetry for Grid Compliance.</p>
+                            </a>
+                        </SectionWrapper>
+
+                        {/* Card 2: Hardware */}
+                        <SectionWrapper delay={0.2}>
+                            <a href="#panels" className="block h-full group p-8 bg-white border border-slate-200 rounded-3xl hover:border-emerald-500 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+                                <div className="flex flex-col items-center text-center gap-6 mb-4">
+                                    <div className="p-5 bg-emerald-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                                        <Zap className="w-10 h-10" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-900 transition-colors">Electrical Panels</h3>
+                                </div>
+                                <p className="text-slate-500 text-base text-center leading-relaxed transition-colors">In-house Manufacturing of HT/LT Panels.</p>
+                            </a>
+                        </SectionWrapper>
+
+                        {/* Card 3: Projects */}
+                        <SectionWrapper delay={0.3}>
+                            <a href="#turnkey" className="block h-full group p-8 bg-white border border-slate-200 rounded-3xl hover:border-amber-500 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+                                <div className="flex flex-col items-center text-center gap-6 mb-4">
+                                    <div className="p-5 bg-amber-50 rounded-2xl text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
+                                        <Factory className="w-10 h-10" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-900 transition-colors">Turnkey E&I</h3>
+                                </div>
+                                <p className="text-slate-500 text-base text-center leading-relaxed transition-colors">End-to-End Execution for Solar & Wind.</p>
+                            </a>
+                        </SectionWrapper>
+                    </div>
+                </div>
+            </section>
+
             {/* 2. SOLUTION 1: UNIFIED RENEWABLE SOLUTIONS (Dark) */}
-            <section className="section-dark py-24 bg-transparent text-white relative z-10">
+            <section id="unified" className="section-dark pt-32 pb-24 bg-slate-900 text-white relative z-10 scroll-mt-32">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <SectionWrapper>
@@ -129,17 +175,18 @@ export default function RenewablePage() {
                             </SectionWrapper>
                         ))}
                     </div>
-                    <div className="mt-12 flex justify-center">
-                        <MicroCTA text="Get SCADA Demo" variant="connect" href="/contact" />
+                    <div className="mt-12 flex flex-col md:flex-row justify-center gap-6">
+                        <MicroCTA text="Download Brochure" variant="download" href="#" />
+                        <MicroCTA text="Get SCADA Demo" variant="connect" href="/contact" context="dark" />
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* --- INTERACTIVE CALCULATOR SECTION --- */}
 
 
             {/* 3. SOLUTION 2: ELECTRICAL PANELS (Light) */}
-            <section className="section-light py-24 bg-white rounded-t-[40px] relative z-20">
+            <section id="panels" className="section-light py-24 bg-white rounded-t-[40px] relative z-20 scroll-mt-32">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="lg:w-1/2">
@@ -160,7 +207,7 @@ export default function RenewablePage() {
                                         <span>Learn More</span>
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
-                                    <MicroCTA text="Contact Sales" variant="connect" href="/contact" />
+                                    <MicroCTA text="Contact Sales" variant="connect" href="/contact" context="light" />
                                 </div>
                             </SectionWrapper>
                         </div>
@@ -198,7 +245,7 @@ export default function RenewablePage() {
             </section>
 
             {/* 4. SOLUTION 3: TURNKEY E&I (Dark) */}
-            <section className="section-dark py-24 bg-slate-900 text-white relative z-10 -mt-10 pt-32">
+            <section id="turnkey" className="section-dark py-24 bg-slate-900 text-white relative z-10 -mt-10 pt-32 scroll-mt-32">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16 reveal">
                         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">3. Turnkey E&I</h2>
@@ -229,6 +276,9 @@ export default function RenewablePage() {
                             </SectionWrapper>
                         ))}
                     </div>
+                    <div className="mt-12 flex justify-center">
+                        <MicroCTA text="Learn More" variant="connect" href="/contact" context="dark" />
+                    </div>
                 </div>
             </section>
 
@@ -241,17 +291,20 @@ export default function RenewablePage() {
                     </SectionWrapper>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { title: "Utility Scale", desc: "GW-scale Solar & Wind parks.", icon: <Sun className="w-6 h-6" /> },
-                            { title: "Hybrid Projects", desc: "Solar + Wind + BESS integration.", icon: <Battery className="w-6 h-6" /> },
-                            { title: "C&I (Commercial)", desc: "Captive power plants for heavy industry (Steel, Cement).", icon: <Factory className="w-6 h-6" /> }
+                            { title: "Utility Scale", desc: "GW-scale Solar & Wind parks", icon: <Sun className="w-8 h-8" /> },
+                            { title: "Hybrid Projects", desc: "Solar + Wind + BESS integration", icon: <Battery className="w-8 h-8" /> },
+                            { title: "C&I (Commercial)", desc: "Captive power plants for heavy industry (Steel, Cement)", icon: <Factory className="w-8 h-8" /> }
                         ].map((item, i) => (
-                            <SectionWrapper key={i} delay={i * 0.1}>
-                                <div className="premium-card p-10 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-2 duration-300">
-                                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm text-primary">
+                            <SectionWrapper key={i} delay={i * 0.1} className="h-full">
+                                <div className="group relative p-10 bg-slate-50 border border-slate-200 rounded-[2rem] hover:bg-slate-900 hover:border-slate-800 hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 overflow-hidden h-full flex flex-col">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/0 to-primary/10 rounded-bl-[100px] transition-all duration-500 group-hover:scale-150 group-hover:to-primary/20"></div>
+
+                                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 relative z-10 shrink-0">
                                         {item.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                                    <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-white transition-colors duration-300 relative z-10">{item.title}</h3>
+                                    <p className="text-slate-500 text-lg leading-relaxed group-hover:text-gray-400 transition-colors duration-300 relative z-10 flex-grow">{item.desc}</p>
                                 </div>
                             </SectionWrapper>
                         ))}
@@ -278,7 +331,7 @@ export default function RenewablePage() {
                     </SectionWrapper>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }
 

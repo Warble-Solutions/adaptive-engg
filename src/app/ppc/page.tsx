@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ShieldCheck, Activity, Network, Zap, Lock, Server, CheckCircle2, Database, Cpu, Globe } from "lucide-react";
 import MicroCTA from "@/components/ui/MicroCTA";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +11,11 @@ import {
     faWaveSquare,
     faHeartbeat,
     faBalanceScale,
-    faBezierCurve // using as substitute for smooth-curve
+    faBezierCurve, // using as substitute for smooth-curve
+    faNetworkWired,
+    faFileContract,
+    faShieldAlt,
+    faCogs
 } from "@fortawesome/free-solid-svg-icons";
 
 // Navbar and Footer are globally in layout
@@ -22,10 +27,10 @@ export default function PPCPage() {
     return (
         <div className="flex flex-col w-full">
             {/* 1. HERO SECTION (Dark) */}
-            <section className="section-hero relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-32">
+            <section className="section-hero relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-32">
                 <div className="z-10 max-w-5xl">
                     <SectionWrapper>
-                        <div className="inline-block px-4 py-1 bg-white/10 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/20">
+                        <div className="inline-block px-4 py-1 bg-white/10 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/20 text-center">
                             India&apos;s Preferred Renewable Energy Technology Partner
                         </div>
 
@@ -53,7 +58,7 @@ export default function PPCPage() {
                                 <p className="text-slate-600 leading-relaxed mb-8">
                                     With a proven track record of excellence, AEPL has established itself as the leader in Power Plant Control (PPC), having successfully executed over <span className="font-bold text-slate-900">200 PPC projects</span> across India’s rapidly growing renewable landscape. Supporting a massive installed base of <span className="font-bold text-slate-900">40GW+</span>, we bring field-proven experience to ensure seamless grid integration and operational success.
                                 </p>
-                                <MicroCTA text="View Our Portfolio" variant="connect" href="/renewable" />
+                                <MicroCTA text="View Our Portfolio" variant="connect" href="/renewable" context="light" />
                             </div>
                         </SectionWrapper>
                         <SectionWrapper delay={0.2}>
@@ -92,33 +97,59 @@ export default function PPCPage() {
                         {[
                             {
                                 title: "The Road to 500GW+",
-                                desc: "By 2030, renewable generation will exceed 500GW+. This rapid scaling demands a transformative shift toward sustainable energy infrastructure."
+                                desc: "By 2030, renewable generation will exceed 500GW+. This rapid scaling demands a transformative shift toward sustainable energy infrastructure",
+                                icon: faChartLine
                             },
                             {
                                 title: "The Distributed Grid",
-                                desc: "Integration of thousands of decentralized Solar, Wind, and BESS assets requires effective orchestration to work in harmony."
+                                desc: "Integration of thousands of decentralized Solar, Wind, and BESS assets requires effective orchestration to work in harmony",
+                                icon: faNetworkWired
                             },
                             {
                                 title: "Intermittency & Instability",
-                                desc: "Fluctuations in wind and solar can risk grid stability. Assets must be managed with high-precision control to prevent frequency deviations."
+                                desc: "Fluctuations in wind and solar can risk grid stability. Assets must be managed with high-precision control to prevent frequency deviations",
+                                icon: faWaveSquare
                             },
                             {
                                 title: "Stringent Regulatory Standards",
-                                desc: "Grid operators are tightening requirements. Compliance is a critical mandate for plants to remain connected and profitable."
+                                desc: "Grid operators are tightening requirements. Compliance is a critical mandate for plants to remain connected and profitable",
+                                icon: faFileContract
                             },
                             {
                                 title: "Securing Critical Infrastructure",
-                                desc: "Renewable assets are prime cyber targets. Robust encryption and adherence to IEC 62443 are vital to prevent outages."
+                                desc: "Renewable assets are prime cyber targets. Robust encryption and adherence to IEC 62443 are vital to prevent outages",
+                                icon: faShieldAlt
                             },
                             {
                                 title: "Expert Execution",
-                                desc: "Complex automation requires deep domain expertise. Connecting high-speed control systems with legacy grids involves intricate engineering."
+                                desc: "Complex automation requires deep domain expertise. Connecting high-speed control systems with legacy grids involves intricate engineering",
+                                icon: faCogs
                             }
                         ].map((item, i) => (
-                            <SectionWrapper key={i} delay={i * 0.1}>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow h-full">
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                            <SectionWrapper key={i} delay={i * 0.1} className="h-full">
+                                <div className="group relative bg-white rounded-2xl border border-slate-200 hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col overflow-hidden">
+                                    {/* Gradient Top Border */}
+                                    <div className="h-1 bg-gradient-to-r from-primary via-teal-400 to-blue-500 group-hover:h-1.5 transition-all duration-300"></div>
+
+                                    <div className="p-8 flex flex-col flex-grow">
+                                        {/* Number Badge & Icon */}
+                                        <div className="flex items-start justify-between mb-6">
+                                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-teal-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                                <span className="text-white font-black text-xl">0{i + 1}</span>
+                                            </div>
+
+                                            {/* Icon */}
+                                            <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                                <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
+                                            </div>
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+
+                                        {/* Description */}
+                                        <p className="text-slate-600 text-sm leading-relaxed flex-grow">{item.desc}</p>
+                                    </div>
                                 </div>
                             </SectionWrapper>
                         ))}
@@ -180,11 +211,24 @@ export default function PPCPage() {
                         <SectionWrapper>
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                                 <div className="bg-white/5 rounded-3xl p-8 border border-white/10 backdrop-blur-sm">
-                                    <div className="flex items-center justify-center h-48">
-                                        <div className="relative">
-                                            <div className="w-32 h-32 rounded-full border-4 border-primary/30 flex items-center justify-center animate-pulse">
-                                                <span className="text-2xl font-black text-white">&lt;200ms</span>
+                                    <div className="grid grid-cols-3 gap-6">
+                                        <div className="flex flex-col items-center justify-center p-6 bg-white/5 rounded-2xl border border-white/5">
+                                            <div className="w-20 h-20 rounded-full border-4 border-primary/30 flex items-center justify-center mb-3">
+                                                <span className="text-base font-black text-white">&lt;200ms</span>
                                             </div>
+                                            <div className="text-xs text-gray-400 uppercase text-center">Response Time</div>
+                                        </div>
+                                        <div className="flex flex-col items-center justify-center p-6 bg-white/5 rounded-2xl border border-white/5">
+                                            <div className="w-20 h-20 rounded-full border-4 border-green-500/30 flex items-center justify-center mb-3">
+                                                <span className="text-base font-black text-green-400">99.9%</span>
+                                            </div>
+                                            <div className="text-xs text-gray-400 uppercase text-center">Uptime</div>
+                                        </div>
+                                        <div className="flex flex-col items-center justify-center p-6 bg-white/5 rounded-2xl border border-white/5">
+                                            <div className="w-20 h-20 rounded-full border-4 border-blue-500/30 flex items-center justify-center mb-3">
+                                                <span className="text-base font-black text-blue-400">24/7</span>
+                                            </div>
+                                            <div className="text-xs text-gray-400 uppercase text-center">Monitoring</div>
                                         </div>
                                     </div>
                                 </div>
@@ -260,19 +304,19 @@ export default function PPCPage() {
                                     <FeatureRow
                                         title="Active Power Control"
                                         desc="Maximize profitability with precision dispatch, intelligent curtailment, and high-speed response to utility commands."
-                                        icon={faChartLine}
+                                        imageSrc="/imgs/tam/Active Power Management.png"
                                         color="text-blue-600"
                                     />
                                     <FeatureRow
                                         title="Reactive Power Control"
                                         desc="Dynamic control for ultra-fast voltage support and precision power factor management to ensure maximum uptime."
-                                        icon={faBolt}
+                                        imageSrc="/imgs/tam/Optimized Reactive Power Control.png"
                                         color="text-yellow-500"
                                     />
                                     <FeatureRow
                                         title="Ramp-Rate Control"
                                         desc="Protect grid integrity with precision ramp rate control, delivering smooth power transitions that eliminate fluctuations."
-                                        icon={faBezierCurve}
+                                        imageSrc="/imgs/tam/Smooth Ramp-Rate Control.png"
                                         color="text-primary"
                                     />
                                 </div>
@@ -292,39 +336,33 @@ export default function PPCPage() {
                                     <FeatureRow
                                         title="Voltage Control"
                                         desc="Maintain perfect grid harmony with instantaneous reactive support and automated regulation for equipment protection."
-                                        icon={faWaveSquare}
+                                        imageSrc="/imgs/tam/Voltage Control.png"
                                         color="text-purple-600"
                                     />
                                     <FeatureRow
                                         title="Frequency Control"
                                         desc="Empower the grid with ultra-responsive sub-second stability and seamless droop support for total utility compliance."
-                                        icon={faHeartbeat}
+                                        imageSrc="/imgs/tam/Dynamic Frequency Response.png"
                                         color="text-red-500"
                                     />
                                     <FeatureRow
                                         title="PF Control"
                                         desc="Optimize plant efficiency with automated phase-angle correction and seamless reactive power management."
-                                        icon={faBalanceScale}
+                                        imageSrc="/imgs/tam/Enhanced Power Factor Correction.png"
                                         color="text-green-600"
-                                    />
-                                    <FeatureRow
-                                        title="Droop Control"
-                                        desc="Ensure autonomous grid resilience with intelligent adjustments to stabilize voltage and frequency fluctuations."
-                                        icon={faWaveSquare}
-                                        color="text-orange-500"
                                     />
                                 </div>
                             </div>
                         </SectionWrapper>
                     </div>
                     <div className="flex justify-center">
-                        <MicroCTA text="Schedule Technical Demo" variant="connect" href="/contact" />
+                        <MicroCTA text="Schedule Technical Demo" variant="connect" href="/contact" context="light" />
                     </div>
-                </div>
-            </section>
+                </div >
+            </section >
 
             {/* 6. ECOSYSTEM INTEGRATION (Dark - Redesigned) */}
-            <section className="section-dark py-32 bg-slate-900 text-white relative z-10 -mt-20 pt-40">
+            < section className="section-dark py-32 bg-slate-900 text-white relative z-10 -mt-20 pt-40" >
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         {/* Left Column: Context */}
@@ -419,10 +457,10 @@ export default function PPCPage() {
                         </SectionWrapper>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* 7. BENEFITS SUMMARY (Light) */}
-            <section className="py-24 bg-white border-t border-slate-100 relative z-20">
+            < section className="py-24 bg-white border-t border-slate-100 relative z-20" >
                 <div className="max-w-7xl mx-auto px-6">
                     <SectionWrapper>
                         <h2 className="text-3xl font-bold text-slate-900 text-center mb-16 font-heading">Benefits of Adaptive-PPC</h2>
@@ -438,8 +476,8 @@ export default function PPCPage() {
                             "Advanced Analytics & Reporting",
                             "Faster Commissioning"
                         ].map((benefit, i) => (
-                            <SectionWrapper key={i} delay={i * 0.1}>
-                                <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-xl border border-slate-100 hover:border-primary/30 transition-colors">
+                            <SectionWrapper key={i} delay={i * 0.1} className="h-full">
+                                <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-xl border border-slate-100 hover:border-primary/30 transition-colors h-full">
                                     <CheckCircle2 className="text-primary w-6 h-6 shrink-0" />
                                     <span className="font-bold text-slate-700">{benefit}</span>
                                 </div>
@@ -447,10 +485,10 @@ export default function PPCPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* 8. CTA (Light) */}
-            <section className="py-20 bg-slate-900 text-center relative z-20">
+            < section className="py-20 bg-slate-900 text-center relative z-20" >
                 <div className="max-w-2xl mx-auto px-6">
                     <SectionWrapper>
                         <h2 className="text-4xl font-bold text-white mb-6 font-heading">Partner with AEPL</h2>
@@ -463,19 +501,20 @@ export default function PPCPage() {
                         </Link>
                     </SectionWrapper>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }
 
 // Helper Card using FontAwesome
 // Helper Row for Features
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function FeatureRow({ title, desc, icon, color }: { title: string; desc: string; icon: any; color: string }) {
+function FeatureRow({ title, desc, imageSrc, color }: { title: string; desc: string; imageSrc?: string; color: string }) {
     return (
         <div className="flex items-start gap-5 group p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 reveal">
-            <div className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 ${color.replace('text-', 'bg-').replace('600', '100').replace('500', '100')} ${color}`}>
-                <FontAwesomeIcon icon={icon} className="w-5 h-5" />
+            <div className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 overflow-hidden ${color.replace('text-', 'bg-').replace('600', '100').replace('500', '100')}`}>
+                {imageSrc ? (
+                    <Image src={imageSrc} alt={title} width={48} height={48} className="object-cover" />
+                ) : null}
             </div>
             <div>
                 <h4 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-primary transition-colors">{title}</h4>

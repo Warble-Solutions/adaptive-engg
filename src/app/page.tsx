@@ -142,7 +142,7 @@ export default function Home() {
                 Our proprietary software provides Central Plant Monitoring and Mobile Asset Management. With an installed base of over 68GW, we ensure optimal performance across 500+ plants.
               </p>
               <div className="mb-8">
-                <MicroCTA text="Request Live Demo" variant="quote" href="/contact?subject=Demo" />
+                <MicroCTA text="Request Live Demo" variant="quote" href="/contact?subject=Demo" context="light" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
@@ -250,7 +250,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-16 text-center">
-            <MicroCTA text="Consult Our Engineers" variant="quote" href="/contact?subject=Consultation" />
+            <MicroCTA text="Consult Our Engineers" variant="quote" href="/contact?subject=Consultation" context="light" />
           </div>
         </div>
       </section>
@@ -306,7 +306,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[800px] md:h-[600px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[1200px] md:h-[800px]">
               {[
                 { step: "01", title: "Conceptualize", desc: "Design & Feasibility", img: "/imgs/protocol/11.jpg", span: "" },
                 { step: "02", title: "Manufacture", desc: "In-house Fabrication", img: "/imgs/protocol/12.jpg", span: "" },

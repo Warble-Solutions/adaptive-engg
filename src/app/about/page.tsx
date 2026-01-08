@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Rocket, Factory, TrendingUp, Trophy, MapPin, Cpu, Activity } from "lucide-react";
 import MicroCTA from "@/components/ui/MicroCTA";
+import Counter from "@/components/ui/Counter";
 
 // NOTE: Navbar and Footer are provided globally by layout.tsx
 
@@ -46,15 +47,27 @@ export default function AboutPage() {
                             <SectionWrapper delay={0.2}>
                                 <div className="grid grid-cols-3 gap-8 text-center">
                                     <div>
-                                        <div className="text-4xl font-extrabold text-primary mb-1">16+</div>
+                                        <Counter
+                                            value={16}
+                                            suffix="+"
+                                            className="text-4xl font-extrabold text-primary mb-1 block"
+                                        />
                                         <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Years</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-extrabold text-primary mb-1">300+</div>
+                                        <Counter
+                                            value={300}
+                                            suffix="+"
+                                            className="text-4xl font-extrabold text-primary mb-1 block"
+                                        />
                                         <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Manpower</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-extrabold text-primary mb-1">1,000+</div>
+                                        <Counter
+                                            value={1000}
+                                            suffix="+"
+                                            className="text-4xl font-extrabold text-primary mb-1 block"
+                                        />
                                         <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Projects</div>
                                     </div>
                                 </div>
@@ -71,10 +84,17 @@ export default function AboutPage() {
                         <h2 className="text-4xl font-bold text-center mb-20 font-heading">Our Journey</h2>
                     </SectionWrapper>
 
-                    <div className="relative border-l-2 border-white/10 ml-6 md:ml-12 space-y-48">
+                    <div className="relative max-w-5xl mx-auto px-6">
+                        {/* Central Line (Desktop) */}
+                        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 hidden md:block transform -translate-x-1/2"></div>
+
+                        {/* Central Line (Mobile) */}
+                        <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 md:hidden"></div>
+
                         {[
                             {
                                 year: "2014",
+                                icon: Rocket,
                                 points: [
                                     "Team Strength - 15",
                                     "Renewable Installed Capacity - 100MW",
@@ -83,6 +103,7 @@ export default function AboutPage() {
                             },
                             {
                                 year: "2016",
+                                icon: Factory,
                                 points: [
                                     "First Panel Manufacturing Factory",
                                     "ISO 9001:2015 - TUV NORD",
@@ -91,6 +112,7 @@ export default function AboutPage() {
                             },
                             {
                                 year: "2018",
+                                icon: TrendingUp,
                                 points: [
                                     "Renewable Installed Capacity - 4.8GW+",
                                     "HT/LT Panels",
@@ -99,6 +121,7 @@ export default function AboutPage() {
                             },
                             {
                                 year: "2020",
+                                icon: Trophy,
                                 points: [
                                     "Renewable Installed Capacity - 14GW+",
                                     "Introduced Renewable PPC",
@@ -109,6 +132,7 @@ export default function AboutPage() {
                             },
                             {
                                 year: "2022",
+                                icon: MapPin,
                                 points: [
                                     "Single location 1GW",
                                     "Single Largest Order - 3.6GW",
@@ -118,6 +142,7 @@ export default function AboutPage() {
                             },
                             {
                                 year: "2024",
+                                icon: Cpu,
                                 points: [
                                     "Renewable Installed Capacity - 40GW+",
                                     "New Office - 100+ workstations",
@@ -132,6 +157,7 @@ export default function AboutPage() {
                             },
                             {
                                 year: "Current",
+                                icon: Activity,
                                 points: [
                                     "Team Strength - 300+",
                                     "Solar Installed Capacity - 51GW+",
@@ -143,20 +169,46 @@ export default function AboutPage() {
                                     "Yearly Capacity - 25GW+"
                                 ]
                             }
-                        ].map((item, i, arr) => (
+                        ].map((item, i) => (
                             <SectionWrapper key={i} delay={i * 0.1}>
-                                <div className="relative pl-12">
-                                    <div className={`absolute -left-[9px] top-2 w-4 h-4 rounded-full ${i === arr.length - 1 ? "bg-primary shadow-[0_0_15px_rgba(4,154,137,0.5)] animate-pulse" : "bg-white"}`}></div>
-                                    <span className="text-5xl font-black text-white/5 absolute -top-10 left-10 select-none">{item.year}</span>
-                                    <h3 className="text-2xl font-bold text-white mb-4">{item.year}</h3>
-                                    <ul className="space-y-2">
-                                        {item.points.map((point, idx) => (
-                                            <li key={idx} className="text-gray-400 flex items-start gap-2">
-                                                <span className="text-primary mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
-                                                <span className="leading-relaxed">{point}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                <div className={`relative flex flex-col md:flex-row items-center mb-16 md:mb-24 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+
+                                    {/* Timeline Node */}
+                                    <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-slate-900 border-4 border-primary shadow-[0_0_15px_rgba(4,154,137,0.5)] z-20 flex items-center justify-center">
+                                        <div className="w-3 h-3 bg-white rounded-full"></div>
+                                    </div>
+
+                                    {/* Content Card */}
+                                    <div className="w-full md:w-1/2 pl-20 md:pl-0 md:px-16">
+                                        <div className={`
+                                            p-8 rounded-2xl border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-1 group relative overflow-hidden
+                                            ${i % 2 === 0 ? "bg-gradient-to-br from-white/5 to-white/0" : "bg-gradient-to-bl from-white/5 to-white/0"}
+                                        `}>
+                                            {/* Decorative Large Background Icon */}
+                                            <item.icon className="absolute -right-4 -bottom-4 w-32 h-32 text-white/5 rotate-[-15deg] group-hover:rotate-0 transition-transform duration-500" />
+
+                                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                                <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
+                                                    <item.icon className="w-6 h-6 text-primary" />
+                                                </div>
+                                                <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-300 font-heading">
+                                                    {item.year}
+                                                </h3>
+                                            </div>
+
+                                            <ul className="space-y-3 relative z-10">
+                                                {item.points.map((point, idx) => (
+                                                    <li key={idx} className="flex items-start gap-3 text-gray-300 text-sm md:text-base group-hover:text-white transition-colors">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 group-hover:scale-125 transition-transform shrink-0"></span>
+                                                        <span>{point}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    {/* Spacer for opposite side */}
+                                    <div className="hidden md:block w-1/2"></div>
                                 </div>
                             </SectionWrapper>
                         ))}
