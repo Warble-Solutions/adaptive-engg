@@ -43,11 +43,12 @@ export default function Footer() {
                 <div>
                     <h5 className="text-white font-bold mb-6 text-lg tracking-wide">Solutions</h5>
                     <ul className="space-y-4 text-sm text-gray-400 font-medium">
-                        <li><Link href="/solutions/renewable" className="hover:text-primary hover:pl-1 transition-all">Unified Renewable</Link></li>
-                        <li><Link href="/solutions/pm-kusum" className="hover:text-primary hover:pl-1 transition-all">PM-KUSUM (SolarWiz)</Link></li>
-                        <li><Link href="#" className="hover:text-primary hover:pl-1 transition-all">Water Treatment</Link></li>
-                        <li><Link href="#" className="hover:text-primary hover:pl-1 transition-all">Tunnel Automation</Link></li>
-                        <li><Link href="#" className="hover:text-primary hover:pl-1 transition-all">Electrical Panels</Link></li>
+                        <li><Link href="/renewable" className="hover:text-primary hover:pl-1 transition-all">Unified Renewable Solution</Link></li>
+                        <li><Link href="/renewable#panels" className="hover:text-primary hover:pl-1 transition-all">Electrical Panel</Link></li>
+                        <li><Link href="/renewable#turnkey" className="hover:text-primary hover:pl-1 transition-all">Turnkey E&I</Link></li>
+                        <li><Link href="/renewable" className="hover:text-primary hover:pl-1 transition-all">IoT SCADA</Link></li>
+                        <li><Link href="/renewable" className="hover:text-primary hover:pl-1 transition-all">ReportWiz</Link></li>
+                        <li><Link href="/renewable" className="hover:text-primary hover:pl-1 transition-all">Central Monitoring System (CMS)</Link></li>
                     </ul>
                 </div>
 
@@ -57,7 +58,7 @@ export default function Footer() {
                     <ul className="space-y-4 text-sm text-gray-400 font-medium">
                         <li className="flex items-start gap-3">
                             <MapPin className="text-primary w-5 h-5 mt-1 shrink-0" />
-                            <span>2/1 Chitra Ami Apartment, Opp Reserve Bank, Ashram Road, Ahmedabad - 380009</span>
+                            <span>21st Floor, Yash Anant, Opp. Old RBI, Ashram Road, Ahmedabad - 380009, Gujarat, India</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <Phone className="text-primary w-5 h-5 shrink-0" />

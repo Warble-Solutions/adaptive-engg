@@ -105,10 +105,10 @@ export default function Navbar() {
                                 Renewable Solutions <ChevronDown className="w-3 h-3 opacity-50" />
                             </Link>
                             <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-primary overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                <DropdownLink href="/renewable">Unified Renewable</DropdownLink>
+                                <DropdownLink href="/renewable">Unified Renewable Solution</DropdownLink>
+                                <DropdownLink href="/renewable#panels">Electrical Panel</DropdownLink>
+                                <DropdownLink href="/renewable#turnkey">Turnkey E&I</DropdownLink>
                                 <DropdownLink href="/ppc">Power Plant Control</DropdownLink>
-                                <DropdownLink href="/renewable">Solar Wind Hybrid</DropdownLink>
-                                <DropdownLink href="/renewable">Turnkey E&I</DropdownLink>
                             </div>
                         </div>
 
@@ -173,10 +173,6 @@ export default function Navbar() {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "tween", duration: 0.3 }}
                         className="fixed inset-0 z-[60] bg-slate-900 h-screen flex flex-col justify-center px-8 space-y-8 shadow-2xl lg:hidden"
                     >
                         <button

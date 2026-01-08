@@ -71,7 +71,7 @@ export default function HeroCarousel() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setCurrent((prev) => (prev + 1) % slides.length);
-        }, 3000); // 3 seconds pause as requested
+        }, 6000); // 6 seconds pause as requested
         return () => clearTimeout(timer);
     }, [current]);
 

@@ -1,61 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import HeroCarousel from "@/components/HeroCarousel";
 import SectionWrapper from "@/components/SectionWrapper";
 import Link from "next/link";
 import MicroCTA from "@/components/ui/MicroCTA";
 import Counter from "@/components/ui/Counter";
-import { ArrowRight, ShieldCheck, Activity, HardHat, CheckCircle2, Blocks, Link2 } from "lucide-react";
+import { ArrowRight, ShieldCheck, Activity, HardHat, CheckCircle2, Blocks, Link2, Youtube } from "lucide-react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDraftingCompass, faIndustry, faScrewdriverWrench, faDesktop } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  useEffect(() => {
-    const initAnime = async () => {
-      // @ts-ignore
-      const animeModule = await import("animejs") as any;
-      const anime = animeModule.default || animeModule;
-
-      if (!anime) return;
-
-      const runAnime = typeof anime === 'function' ? anime : animeModule.anime;
-
-      if (typeof runAnime === 'function') {
-        // 1. Standard Reveal Animation
-        runAnime({
-          targets: ".reveal",
-          translateY: [20, 0],
-          opacity: [0, 1],
-          easing: "easeOutExpo",
-          duration: 1000,
-          delay: (el: any, i: number) => i * 100,
-        });
-
-        // 2. Protocol "Pulse" Animation (Infinite Flow)
-        runAnime({
-          targets: '.protocol-pulse',
-          strokeDashoffset: [anime.setDashoffset, 0],
-          easing: 'linear',
-          duration: 3000,
-          loop: true
-        });
-
-        // 3. Floating Icons (Bobbing effect)
-        runAnime({
-          targets: '.floating-icon',
-          translateY: [-5, 5],
-          direction: 'alternate',
-          loop: true,
-          easing: 'easeInOutSine',
-          duration: 2000,
-          delay: runAnime.stagger(200)
-        });
-      }
-    };
-    initAnime();
-  }, []);
   return (
     <div className="flex flex-col">
       {/* 1. HERO CAROUSEL */}
@@ -113,7 +68,7 @@ export default function Home() {
             {[
               { value: 16, suffix: "+", label: "Years Experience" },
               { value: 300, suffix: "+", label: "Manpower" },
-              { value: 68, suffix: " GW+", label: "Assets Monitored" },
+              { value: 68, suffix: "GW+", label: "Assets Monitored" },
               { value: 125000, suffix: "+", label: "Sq. Ft. Facility" },
               { value: 1000, suffix: "+", label: "Projects Executed" },
               { value: 500, suffix: "+", label: "Plants Monitored" }
@@ -173,11 +128,11 @@ export default function Home() {
           </div>
 
 
-        </div >
-      </section >
+        </div>
+      </section>
 
       {/* 5. TECH HIGHLIGHT (Light) */}
-      < section className="py-24 bg-light z-0" >
+      <section className="py-24 bg-light z-0" >
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
           <div className="lg:w-1/2">
             <SectionWrapper>
@@ -186,6 +141,9 @@ export default function Home() {
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Our proprietary software provides Central Plant Monitoring and Mobile Asset Management. With an installed base of over 68GW, we ensure optimal performance across 500+ plants.
               </p>
+              <div className="mb-8">
+                <MicroCTA text="Request Live Demo" variant="quote" href="/contact?subject=Demo" />
+              </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                   <Activity className="text-primary w-8 h-8 group-hover:scale-110 transition-transform" />
@@ -216,10 +174,10 @@ export default function Home() {
             </SectionWrapper>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* 6. PROJECTS (Dark) */}
-      < section className="py-32 bg-transparent rounded-t-[40px] z-10 relative" >
+      <section className="py-32 bg-transparent rounded-t-[40px] z-10 relative" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-6">
             <SectionWrapper>
@@ -263,10 +221,10 @@ export default function Home() {
             </SectionWrapper>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* 7. SCALABILITY (Light) */}
-      < section className="section-light py-24 bg-white relative z-20" >
+      <section className="section-light py-24 bg-white relative z-20" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionWrapper>
@@ -291,11 +249,14 @@ export default function Home() {
               </SectionWrapper>
             ))}
           </div>
+          <div className="mt-16 text-center">
+            <MicroCTA text="Consult Our Engineers" variant="quote" href="/contact?subject=Consultation" />
+          </div>
         </div>
-      </section >
+      </section>
 
       {/* 8. TESTIMONIALS (Dark) */}
-      < section className="section-dark py-24 bg-transparent relative z-10" >
+      <section className="section-dark py-24 bg-transparent relative z-10" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionWrapper>
@@ -329,56 +290,158 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* 9. PROTOCOL (Light) */}
-      < section className="py-32 bg-light z-20" >
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="py-24 bg-light z-20" >
+        <div className="max-w-[1800px] mx-auto px-6">
           <SectionWrapper>
-            <h2 className="text-4xl font-extrabold text-slate-900 mb-20 font-heading">The Protocol</h2>
-            <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* Connector Line (Desktop) */}
-              <div className="hidden md:block absolute top-[45px] left-[10%] right-[10%] h-[2px] z-0">
-                <svg width="100%" height="2" className="overflow-visible">
-                  <line x1="0" y1="1" x2="100%" y2="1" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10" className="text-primary/30" />
-                  <line x1="0" y1="1" x2="100%" y2="1" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10" className="text-primary protocol-pulse opacity-50" />
-                </svg>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-12">
+              <div>
+                <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-2 block">Our Methodology</span>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 font-heading">The Integration Pipeline</h2>
               </div>
+              <p className="text-slate-500 max-w-sm text-right hidden md:block">
+                A streamlined framework delivering excellence from concept to commissioning.
+              </p>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[800px] md:h-[600px]">
               {[
-                { step: "01", title: "Conceptualize", desc: "Design & Feasibility", img: "/imgs/protocol/11.jpg" },
-                { step: "02", title: "Manufacture", desc: "In-house Panel Fabrication", img: "/imgs/protocol/12.jpg" },
-                { step: "03", title: "Commission", desc: "Install & Test up to 66KV", img: "/imgs/protocol/13.jpg" },
-                { step: "04", title: "Monitor", desc: "24/7 ReportWiz Analytics", img: "/imgs/protocol/14.jpg" }
+                { step: "01", title: "Conceptualize", desc: "Design & Feasibility", img: "/imgs/protocol/11.jpg", span: "" },
+                { step: "02", title: "Manufacture", desc: "In-house Fabrication", img: "/imgs/protocol/12.jpg", span: "" },
+                { step: "03", title: "Commission", desc: "Install & Execute", img: "/imgs/protocol/13.jpg", span: "" },
+                { step: "04", title: "Monitor", desc: "24/7 ReportWiz Analytics", img: "/imgs/protocol/14.jpg", span: "" }
               ].map((item, i) => (
-                <div key={i} className="group relative z-10 mb-12 md:mb-0">
-                  <div className="w-40 h-40 mx-auto bg-white rounded-full border-4 border-white shadow-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-primary transition-all duration-300 relative z-20 floating-icon overflow-hidden">
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                <div key={i} className={`group relative overflow-hidden rounded-3xl cursor-pointer ${item.span}`}>
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:via-black/40"></div>
+                  </div>
 
-                    <div className="absolute top-0 right-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold border-2 border-white shadow-lg">
-                      {item.step}
+                  {/* Content Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end">
+                    <div className="flex items-center gap-4 mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <span className="text-5xl font-black text-white/20 select-none group-hover:text-primary transition-colors">{item.step}</span>
+                      <div className="h-[1px] flex-grow bg-white/20 group-hover:bg-primary transition-colors"></div>
                     </div>
+
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{item.title}</h3>
+                    <p className="text-gray-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 opacity-0 group-hover:opacity-100">{item.desc}</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative z-30">
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h4>
-                    <p className="text-sm text-slate-500">{item.desc}</p>
-                  </div>
+                  {/* Corner Accents */}
+                  <div className="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-white/20 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               ))}
             </div>
-
           </SectionWrapper>
         </div>
-      </section >
+      </section>
+
+      {/* 9. MEDIA GALLERY (YouTube Widget) */}
+      <section className="section-dark py-24 px-6 relative overflow-hidden bg-slate-900 border-t border-white/5" >
+        <div className="max-w-7xl mx-auto">
+
+          {/* Header */}
+          <SectionWrapper className="mb-12 text-center">
+            <div className="inline-flex items-center gap-2 mb-4 bg-red-600/10 px-4 py-1.5 rounded-full border border-red-600/20">
+              <Youtube className="text-red-500 w-4 h-4" />
+              <span className="text-red-400 text-xs font-bold tracking-widest uppercase">Latest Uploads</span>
+            </div>
+            <h2 className="text-4xl serif font-bold text-white mb-4">Engineering in Motion</h2>
+
+          </SectionWrapper>
+
+          {/* 6-Video Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* Video 1: Corporate Profile */}
+            <SectionWrapper className="group">
+              <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/xGRlPBasltI?loading=lazy" title="Corporate Profile" allowFullScreen></iframe>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">Corporate Profile</h4>
+                <p className="text-sm text-gray-500 mt-1">An inside look at our capabilities.</p>
+              </div>
+            </SectionWrapper>
+
+            {/* Video 2: Renewable Monitoring */}
+            <SectionWrapper className="group" delay={0.1}>
+              <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/kY67Z31N4N0?loading=lazy" title="Monitoring Solutions" allowFullScreen></iframe>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">Monitoring Solutions</h4>
+                <p className="text-sm text-gray-500 mt-1">Managing 68GW+ of assets.</p>
+              </div>
+            </SectionWrapper>
+
+            {/* Video 3: ReportWiz (KUSUM) */}
+            <SectionWrapper className="group" delay={0.2}>
+              <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/6-5EexkEQvA?loading=lazy" title="ReportWiz Demo" allowFullScreen></iframe>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">ReportWiz Demo</h4>
+                <p className="text-sm text-gray-500 mt-1">PM-KUSUM Subsidy Automation.</p>
+              </div>
+            </SectionWrapper>
+
+            {/* Video 4: Manufacturing (LT Panels) */}
+            <SectionWrapper className="group">
+              <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/0JhExHWzK6Y?loading=lazy" title="LT Panel Manufacturing" allowFullScreen></iframe>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">Manufacturing Facility</h4>
+                <p className="text-sm text-gray-500 mt-1">Inside our 125,000 Sq. Ft. Plant.</p>
+              </div>
+            </SectionWrapper>
+
+            {/* Video 5: REI Expo Highlights */}
+            <SectionWrapper className="group" delay={0.1}>
+              <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/unreC-D1cKk?loading=lazy" title="REI Expo Highlights" allowFullScreen></iframe>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">REI Expo Highlights</h4>
+                <p className="text-sm text-gray-500 mt-1">Showcasing innovation at REI.</p>
+              </div>
+            </SectionWrapper>
+
+            {/* Video 6: Director Interview */}
+            <SectionWrapper className="group" delay={0.2}>
+              <div className="aspect-video w-full bg-slate-800 rounded-2xl overflow-hidden border border-white/10 relative shadow-lg">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/grmVOLbojBA?loading=lazy" title="Director's Vision" allowFullScreen></iframe>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">Director&apos;s Vision</h4>
+                <p className="text-sm text-gray-500 mt-1">Customer Talk with Mr. Jay Patel.</p>
+              </div>
+            </SectionWrapper>
+
+          </div>
+
+          {/* View All Button */}
+          <SectionWrapper className="mt-16 text-center">
+            <a
+              href="https://www.youtube.com/@AdaptiveEngineeringPvt.Ltd"
+              target="_blank"
+              className="inline-flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:bg-red-600 hover:border-red-600 text-white rounded-full font-bold transition-all group"
+            >
+              <span>View All 50+ Videos</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </SectionWrapper>
+
+        </div>
+      </section>
 
       {/* 8. IMPACT (Dark) */}
-      < section className="py-32 bg-transparent" >
+      <section className="py-32 bg-transparent" >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12 text-white">
           <SectionWrapper>
             <h2 className="text-4xl font-bold mb-4 font-heading">Impact & Scale</h2>
@@ -395,10 +458,10 @@ export default function Home() {
             </SectionWrapper>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* 9. SAFETY (Light) */}
-      < section className="py-24 bg-light border-t border-gray-100" >
+      <section className="py-24 bg-light border-t border-gray-100" >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2">
             <SectionWrapper>
@@ -406,6 +469,9 @@ export default function Home() {
               <p className="text-lg text-slate-600 leading-relaxed">
                 Our best-in-class manufacturing facility is certified by TUV Nord. We maintain stringent safety standards and a Zero Harm policy.
               </p>
+              <div className="mt-8">
+                <Link href="/about" className="text-primary font-bold border-b-2 border-primary pb-1 hover:text-slate-900 transition-colors">View Safety Policy</Link>
+              </div>
             </SectionWrapper>
           </div>
           <div className="flex gap-6">
@@ -423,10 +489,10 @@ export default function Home() {
             </SectionWrapper>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* 10. CTA (Dark) */}
-      < section className="py-40 bg-transparent text-center relative z-10" >
+      <section className="py-40 bg-transparent text-center relative z-10" >
         <div className="max-w-3xl mx-auto px-6">
           <SectionWrapper>
             <h2 className="text-4xl md:text-6xl mb-8 font-black text-white font-heading">Ready to <span className="text-primary">Scale?</span></h2>
@@ -436,7 +502,7 @@ export default function Home() {
             </Link>
           </SectionWrapper>
         </div>
-      </section >
-    </div >
+      </section>
+    </div>
   );
 }
