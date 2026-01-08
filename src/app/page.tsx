@@ -24,35 +24,19 @@ export default function Home() {
       </section>
 
       {/* 2. MARQUEE SECTION (Light) */}
-      <section className="py-20 bg-light rounded-t-[40px] relative z-20 -mt-10">
+      <section className="pt-20 pb-8 bg-light rounded-t-[40px] relative z-20 -mt-10">
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <p className="text-center text-gray-400 text-lg font-bold uppercase tracking-[0.2em]">Preferred Partner for Industry Leaders</p>
         </div>
         <div className="flex overflow-hidden relative">
           <div className="flex animate-marquee gap-20 min-w-full px-10">
-            {[
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/1-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/20-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/36-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/40-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/21-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/13-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/19-1024x1024.png.webp"
-            ].map((src, i) => (
+            {Array.from({ length: 40 }, (_, i) => `/imgs/logos/${i + 1}.webp`).map((src, i) => (
               <div key={i} className="flex-shrink-0">
                 <img src={src} alt="Partner" className="h-40 w-auto object-contain opacity-80 hover:scale-110 transition-transform duration-300" />
               </div>
             ))}
             {/* Duplicate for seamless loop */}
-            {[
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/1-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/20-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/36-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/40-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/21-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/13-1024x1024.png.webp",
-              "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1024/https://adaptive-engg.com/wp-content/uploads/2023/04/19-1024x1024.png.webp"
-            ].map((src, i) => (
+            {Array.from({ length: 40 }, (_, i) => `/imgs/logos/${i + 1}.webp`).map((src, i) => (
               <div key={`dup-${i}`} className="flex-shrink-0">
                 <img src={src} alt="Partner" className="h-40 w-auto object-contain opacity-80 hover:scale-110 transition-transform duration-300" />
               </div>
@@ -62,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* 3. STATS GRID (Light) */}
-      <section className="py-24 bg-white z-20">
+      <section className="pt-8 pb-24 bg-white z-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 text-center">
             {[
