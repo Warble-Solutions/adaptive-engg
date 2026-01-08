@@ -28,7 +28,7 @@ export default function RenewablePage() {
                         </h1>
 
                         <p className="text-gray-300 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-                            The complete power value chain: From Digital Intelligence to Heavy Infrastructure
+                            The complete power value chain: From advanced Digital Intelligence and SCADA Automation to robust Heavy Electrical Infrastructure and Grid Integration
                         </p>
                     </SectionWrapper>
                 </div>

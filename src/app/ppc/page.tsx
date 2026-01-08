@@ -34,7 +34,7 @@ export default function PPCPage() {
                         </h1>
 
                         <p className="text-gray-300 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-                            Advanced, reliable and adaptable Power Plant Control (PPC) solutions for stand-alone and hybrid plants to achieve green energy goals.
+                            Advanced, reliable and adaptable Power Plant Control (PPC) solutions for stand-alone and hybrid plants to achieve green energy goals
                         </p>
                     </SectionWrapper>
                 </div>

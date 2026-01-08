@@ -28,7 +28,7 @@ export default function PmKusumPage() {
                         </h1>
 
                         <p className="text-gray-300 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-                            End-to-end Remote Monitoring (RMS) & Automation for Components A, B & C
+                            End-to-end Remote Monitoring (RMS) & Automation solutions comprehensively designed for PM-KUSUM Components A, B & C, ensuring seamless integration and real-time data visibility
                         </p>
                     </SectionWrapper>
                 </div>
