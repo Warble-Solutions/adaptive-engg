@@ -19,7 +19,7 @@ export default function ContactPage() {
     return (
         <div className="flex flex-col w-full">
             {/* 1. HERO SECTION (Dark) */}
-            <section className="section-hero relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 pt-32">
+            <section className="section-hero relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
                 <div className="z-10 max-w-4xl">
                     <SectionWrapper>
                         <h1 className="text-5xl md:text-7xl font-black text-white mb-6 font-heading">
