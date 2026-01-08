@@ -463,7 +463,7 @@ export default function PPCPage() {
             < section className="py-24 bg-white border-t border-slate-100 relative z-20" >
                 <div className="max-w-7xl mx-auto px-6">
                     <SectionWrapper>
-                        <h2 className="text-3xl font-bold text-slate-900 text-center mb-16 font-heading">Benefits of Adaptive-PPC</h2>
+                        <h2 className="text-3xl font-bold text-slate-900 text-center mb-16 font-heading">Benefits of AEPL-PPC</h2>
                     </SectionWrapper>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
