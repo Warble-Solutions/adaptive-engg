@@ -106,7 +106,7 @@ export default function Navbar() {
                             </Link>
                             <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-primary overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                 <DropdownLink href="/renewable">Unified Renewable Solution</DropdownLink>
-                                <DropdownLink href="/renewable#panels">Electrical Panel</DropdownLink>
+                                <DropdownLink href="/renewable#panels">Electrical Panels</DropdownLink>
                                 <DropdownLink href="/renewable#turnkey">Turnkey E&I</DropdownLink>
                                 <DropdownLink href="/ppc">Power Plant Control</DropdownLink>
                             </div>

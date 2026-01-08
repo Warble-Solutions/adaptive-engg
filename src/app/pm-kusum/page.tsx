@@ -16,7 +16,7 @@ export default function PmKusumPage() {
     return (
         <div className="flex flex-col w-full">
             {/* 1. HERO SECTION (Dark) */}
-            <section className="section-hero relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-32">
+            <section className="section-hero relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-32">
                 <div className="z-10 max-w-5xl">
                     <SectionWrapper>
                         <div className="inline-block px-4 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-green-500/30">
